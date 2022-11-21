@@ -1,0 +1,28 @@
+.cabeza{
+    background-color: beige;
+}
+#titulo{
+    text-align: center;
+}
+.tabla{
+    width:100%;
+}
+.tabla,td,tr{
+border: 1px solid black;
+border-collapse: collapse;
+}
+.imagen{
+    
+	margin: auto;
+	text-align: center;
+	
+    width: 200px;
+    height: 200px;
+}
+.principal{
+    margin: 20px 20px 20px 20px;
+    background-color: azure;
+}
+#fotos{
+    
+}

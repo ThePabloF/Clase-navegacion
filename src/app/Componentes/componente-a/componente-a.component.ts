@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
 export class ComponenteAComponent implements OnInit {
 
   constructor(private router: Router) { }
-  
-
+  irApagina1(){
+    this.router.navigate([""])
+   }
   irApagina(){
     this.router.navigateByUrl("/segunda");
   }
@@ -20,10 +21,8 @@ export class ComponenteAComponent implements OnInit {
   irApagina4(){
     this.router.navigateByUrl("/cuarta");
   }
-
   ngOnInit(): void {
-    console.log("llego de golpe")
   }
-  
 
 }
+
