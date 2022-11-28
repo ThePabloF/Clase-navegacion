@@ -11,7 +11,7 @@ const routes: Routes = [
     component: ComponenteAComponent
 
   },
-        {path:'segunda',
+{path:'segunda',
 component:ComponenteBComponent},
 {path: 'tercera', component:ComponenteCComponent},
 {path: 'cuarta', component:ComponenteDComponent}
