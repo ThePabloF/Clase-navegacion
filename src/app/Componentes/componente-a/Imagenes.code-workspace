@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Imagenes",
+			"path": "../../../../../../Imágenes/Imagenes"
+		},
+		{
+			"name": "AngularComponents-main",
+			"path": "../../../.."
+		}
+	],
+	"settings": {}
+}

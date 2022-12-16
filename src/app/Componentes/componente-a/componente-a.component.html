@@ -1,23 +1,45 @@
-<header>
-    <img src="C:\Users\pablo\OneDrive\Imágenes\Imagenes\Laimagen.jpeg" alt="Perfil">
-    <h1 class="head">Mi Blog</h1>   
-    <nav class="nav">
-        <button (click)="irApagina1()">Pagina 1</button>
-<button (click)="irApagina()">Pagina 2</button>
-<button (click)="irApagina3()">Pagina 3</button>
-<button (click)="irApagina4()">Pagina 4</button>
-    </nav>
-      
 
-</header>
+<head>
+<H1>Formulario</H1>
+</head>
+
 <body>
-  <p>Ingrese nombre</p><br>
- 
+  
+
+    <form [formGroup]="miformulario">
+
+        <input type="text" formControlName="nombre" class="form-control" placeholder = "Ingrese Nombres">
+        <span *ngIf="validar('nombre')">
+            No puede ir vacio
+        </span> 
+        <input type="text" formControlName="apellido" class="form-control"  placeholder = "Ingrese Apellidos">
+        <span *ngIf="validar('apellido')">
+            No puede ir vacio
+        </span> 
+        <input type="text" formControlName="telefono" class="form-control" placeholder = "Ingresa tu telefono">
+        <span *ngIf="validar('telefono')">
+            No puede ir vacio
+        </span> 
+        <input type="text" formControlName="cedula" class="form-control" placeholder = "Ingresa tu cedula">
+        <span *ngIf="validar('cedula')">
+            No puede ir vacio
+        </span> 
+        <input type="text" formControlName="correo" class="form-control" placeholder = "Ingresa tu correo">
+        <span *ngIf="validar('correo')">
+            No puede ir vacio
+        </span> 
+        <div>
+            <pre>{{miformulario.value|json}}</pre>
+        </div>
+        
+        <button type="button" (click)="guardar()" >GUARDAR</button>
+       
+
+    
+
+        
+    </form>
+    
+
+
 </body>
-<div>
-    <p>{{suma}}</p>
-    <p>{{suma2}}</p>
-   
-</div>
-
-

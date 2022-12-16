@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Persona } from '../interfaces/Interfaces';
 
 
 @Component({
@@ -8,51 +10,72 @@ import { Router } from '@angular/router';
   styleUrls: ['./componente-a.component.css']
 })
 export class ComponenteAComponent implements OnInit {
-    constructor(private router: Router) { }
-    //Aquí se deben declarar todas las variables
-    vector: string="";
-    suma: number=0;
-    suma2:number=0;
 
-  irApagina1(){
-    this.router.navigate([""])
-   }
-  irApagina(){
-    this.router.navigateByUrl("/segunda");
+  miformulario: FormGroup=this.fb.group({
+ 
+    nombre:["", Validators.required],
+    apellido:["", Validators.required],
+    correo:["", Validators.required],
+    telefono:["", Validators.required],
+    cedula:["", Validators.required]
+
+  });
+
+  persona={
+    nombre:"",
+    apellido:"",
+    correo:"",
+    telefono:"",
+    cedula:""
   }
-  irApagina3(){
-    this.router.navigateByUrl("/tercera");
+
+    constructor(private router: Router, private fb: FormBuilder) { }
+    //Aquí se deben declarar todas las variables
+   guardar(){
+    
+    if(this.miformulario.valid){
+      this.persona.nombre= this.miformulario.controls['nombre'].value;
+      this.persona.apellido= this.miformulario.controls['apellido'].value;
+      this.persona.correo= this.miformulario.controls['correo'].value;
+      this.persona.telefono= this.miformulario.controls['telefono'].value;
+      this.persona.cedula= this.miformulario.controls['cedula'].value;
+
+      localStorage.setItem('formPersona', JSON.stringify(this.persona))
+      this.router.navigateByUrl("/cuarta");
+      console.log("GUARDADO CORRECTAMENTE")
+    }
+ 
   }
-  irApagina4(){
-    this.router.navigateByUrl("/cuarta");
+  validar(campo: string){
+
+return(this.miformulario.controls[campo].errors && this.miformulario.controls[campo].touched )
+
   }
+
+ irApagina1(){
+  this.router.navigate([""])
+ }
+
+ irApagina(){
+  this.router.navigateByUrl("/segunda");
+}
+irApagina3(){
+  this.router.navigateByUrl("/tercera");
+}
+irApagina4(){
+  this.router.navigateByUrl("/cuarta");
+}
+
+
 
   ngOnInit(): void {//primer metodo al iniciar el componente o cargar la pagina
- this.Suma()
+ 
   }
   
   
 
- Suma(){
-  let numero1:number=2;//let variable local de un metodo
-  let numero2:number=3;
-  var total= this.suma+5;
-  
-  this.suma=numero1+numero2
-  console.log("Suma: ",this.suma)
+ 
 
-  this.suma2=this.suma+5;
-  console.log("Total: ",this.suma2);
-   this.total(this.suma2)//envio el valor de la suma total
- }
- total(sum:number){//recibo el valor de la suma total
-  console.log("Multi: ",sum*2);//multiplico el valor de la suma por 2
-  
 
- }
-navegar(){
-  
-
-}
 }
 

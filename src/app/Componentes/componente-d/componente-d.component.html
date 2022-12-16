@@ -1,4 +1,12 @@
-<head class="cabeza"><h1>Gustos personales</h1></head>
+
+<p>Nombre: {{personaRecibida?.nombre ?? 'No existen clientes'}}</p>
+<p>Apellido: {{personaRecibida?.apellido}}</p>
+<p>Cedula: {{personaRecibida?.cedula}}</p>
+<p>Correo: {{personaRecibida?.correo}}</p>
+<p>Telefono: {{personaRecibida?.telefono}}</p>
+
+
+
 <button (click)="irApagina1()">Pagina 1</button>
 <button (click)="irApagina()">Pagina 2</button>
 <button (click)="irApagina3()">Pagina 3</button>
