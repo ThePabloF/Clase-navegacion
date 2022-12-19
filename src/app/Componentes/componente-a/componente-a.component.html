@@ -4,10 +4,55 @@
 </head>
 
 <body>
-  
+    <header id="main-header">
+		
+        <a id="logo-header" href="#">
+            <span class="site-name">FEIJO PABLO</span>
+            <span class="site-desc">Pablo Feijo / cabecera / Formulario</span>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav><!-- / nav -->
+
+    </header><!-- / #main-header -->
+
+    
+    <section id="main-content">
+    
+        <article>
+            <header>
+                <h1>Este es un Formulario creado por P.F con ayuda de FranciscoAMK</h1>
+            </header>
+            
+            <img src="https://www.elgrafico.com.ar/media/cache/pub_news_details_large/media/i/d5/0a/d50aa8aa3a17671ccc1ec9949f8f89e22e4d9efb.jpeg" alt="Campeon" />
+            
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            </div>
+            
+        </article> <!-- /article -->
+    
+    </section> <!-- / #main-content -->
+
+    
+    
+   
+
+
 
     <form [formGroup]="miformulario">
 
+        
         <input type="text" formControlName="nombre" class="form-control" placeholder = "Ingrese Nombres">
         <span *ngIf="validar('nombre')">
             No puede ir vacio
